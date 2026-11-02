@@ -1,0 +1,67 @@
+:root{--bg:#121211;--panel:#191817;--metal:#2a2825;--ink:#efe6d2;--dim:#9a9078;--amber:#e8a02c;--amber2:#ffbf47;--k:14px;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{color:var(--ink);font:16px/1.5 Oxanium,system-ui,-apple-system,"Segoe UI",sans-serif;background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 12px,transparent 12px 24px),radial-gradient(ellipse at 30% 15%,#2a2722,var(--bg) 70%);background-color:var(--bg)}
+.mono{font:400 .8rem "Share Tech Mono",ui-monospace,monospace;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+.screen{display:none;position:relative;min-height:100%;flex-direction:column;align-items:center;padding:calc(18px + env(safe-area-inset-top,0px)) 20px calc(18px + env(safe-area-inset-bottom,0px))}
+.screen.on{display:flex}
+button,input{font:inherit;color:var(--ink)}
+:focus-visible{outline:3px solid var(--amber2);outline-offset:2px}
+.cut,.card,.slot,.box,.mbtn,.sbtn,input{clip-path:polygon(var(--k) 0,100% 0,100% calc(100% - var(--k)),calc(100% - var(--k)) 100%,0 100%,0 var(--k))}
+/* title */
+#title{align-items:stretch;justify-content:space-between}
+.top,.bar{display:flex;justify-content:space-between;width:100%;padding-bottom:8px;border-bottom:1px solid rgba(232,160,44,.35)}
+.hero{margin:auto 0 28px}
+h1{font:700 clamp(2.6rem,14vw,4.4rem)/1 Oxanium,sans-serif;letter-spacing:.1em;margin:0}
+h1::after{content:"";display:block;width:110px;height:7px;margin-top:14px;background:repeating-linear-gradient(135deg,var(--amber) 0 6px,transparent 6px 12px)}
+h2{font:700 1.4rem Oxanium,sans-serif;text-transform:uppercase;letter-spacing:.1em;margin:20px 0 4px}
+.tag{color:var(--dim);margin:.8rem 0 0;max-width:32ch}
+.menu{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-bottom:14px}
+.mbtn{position:relative;display:flex;justify-content:flex-end;align-items:center;gap:10px;width:min(320px,100%);min-height:52px;margin:5px 0;padding:0 66px 0 16px;border:0;background:var(--metal);box-shadow:inset 0 0 0 1.5px var(--amber);font:600 1rem Oxanium,sans-serif;text-transform:uppercase;letter-spacing:.08em;text-align:right;cursor:pointer}
+.menu .mbtn{margin:0}
+.mbtn::before{content:"\203A";order:2;color:var(--amber)}
+.mbtn::after{content:"";position:absolute;right:12px;top:12px;bottom:12px;width:36px;background:repeating-linear-gradient(135deg,var(--amber) 0 4px,transparent 4px 8px);opacity:.7}
+.mbtn.main{background:var(--ink);color:#15130f}
+.mbtn.main::before{color:#15130f}
+.mbtn:disabled{opacity:.35;cursor:default}
+footer{padding-top:8px;border-top:1px solid rgba(232,160,44,.35)}
+/* cards and name entry */
+#name,#files,#crewScr{justify-content:flex-start}
+.card{width:min(420px,100%);margin-top:40px;padding:22px 18px;background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--amber);text-align:center}
+.card .mbtn{margin:8px auto}
+.info{margin:.3rem 0}
+input{width:100%;min-height:52px;margin:14px 0 6px;padding:0 14px;background:var(--metal);border:0;box-shadow:inset 0 0 0 1.5px var(--amber);text-align:center}
+.sbtn{min-height:44px;padding:0 18px;border:0;background:var(--metal);box-shadow:inset 0 0 0 1.5px var(--amber);font:600 .9rem Oxanium,sans-serif;text-transform:uppercase;letter-spacing:.08em;cursor:pointer}
+.sbtn:disabled{opacity:.35;cursor:default}
+/* game */
+#game{padding:0;justify-content:flex-end;overflow:hidden;align-items:center}
+#bg{position:absolute;inset:0;background-size:cover;background-position:center}
+#stage{position:absolute;inset:0 0 240px;display:flex;justify-content:center;align-items:flex-end;gap:8px;padding:0 8px}
+.sprite{flex:0 1 220px;height:min(72%,420px);display:flex;align-items:flex-end;justify-content:flex-start;background:linear-gradient(to top,var(--c),transparent 80%);box-shadow:inset 0 0 0 1.5px var(--amber);clip-path:polygon(var(--k) 0,100% 0,100% 100%,0 100%,0 var(--k))}
+.sprite span{width:100%;padding:6px 10px;background:rgba(18,17,16,.82);font-weight:600;font-size:.9rem}
+.sprite small{color:var(--dim);font-weight:400}
+.sprite.art{background:none;box-shadow:none;clip-path:none;align-items:center;justify-content:center}
+.sprite img{max-width:100%;max-height:100%}
+#menuBtn{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:3;background:rgba(18,17,16,.85)}
+#ui{position:relative;width:min(560px,100%);padding:0 12px calc(12px + env(safe-area-inset-bottom,0px))}
+.box{position:relative;min-height:170px;padding:36px 18px 26px;background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--amber);cursor:pointer;text-align:left}
+.box p{margin:0}
+.who{position:absolute;top:0;left:var(--k);padding:3px 16px;background:var(--amber);color:#15130f;font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.85rem}
+.who:empty{display:none}
+.box::after{content:"";position:absolute;left:var(--k);right:calc(var(--k) * 3);bottom:7px;height:5px;background:repeating-linear-gradient(135deg,var(--amber) 0 5px,transparent 5px 10px);opacity:.55}
+.hint{margin-top:.8rem!important;color:var(--dim);font-size:.8rem}
+#choices{margin-top:10px}
+#choices .mbtn{width:100%;justify-content:flex-start;text-align:left;text-transform:none;letter-spacing:0;font-weight:600;min-height:50px;padding:8px 66px 8px 16px}
+#choices .mbtn::before{content:none}
+/* records */
+#slots{width:min(520px,100%);display:grid;gap:14px;margin:12px 0 20px}
+.slot{padding:14px 16px;background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--amber);text-align:left}
+.slot p{margin:0}
+.slot .row{display:flex;gap:10px;margin-top:10px}
+#roster{width:min(520px,100%);display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}
+#card{display:flex;gap:14px;margin:0 0 20px;text-align:left;min-height:140px}
+#card:empty::before{content:"Select a file.";color:var(--dim)}
+.portrait{flex:0 0 96px;height:128px;display:flex;align-items:center;justify-content:center;background:var(--metal);box-shadow:inset 0 0 0 1.5px var(--amber);font:700 2rem Oxanium,sans-serif;color:var(--amber)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.fields p{margin:0 0 .3rem;font-size:.92rem}
+.fields b{color:var(--amber)}

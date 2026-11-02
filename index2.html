@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>STARBOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="title" class="screen on">
+  <header class="top mono"><span>Triton-SS7 // IAGF</span><span>Sys 01</span></header>
+  <div class="hero">
+    <h1>STARBOUND</h1>
+    <p class="tag">Your memories can no longer be trusted. Can you trust the people you love?</p>
+  </div>
+  <nav class="menu">
+    <button class="mbtn main" id="play">Play game</button>
+    <button class="mbtn" id="cont">Continue</button>
+    <button class="mbtn" id="load">Load game</button>
+    <button class="mbtn" id="btnCrew">Crew files</button>
+  </nav>
+  <footer class="mono">Free demo // Chapter 1</footer>
+</section>
+
+<section id="name" class="screen">
+  <div class="card">
+    <p class="mono">Medical officer registration</p>
+    <p class="info">What name should the crew call you?</p>
+    <input id="nameIn" maxlength="16" autocomplete="off" placeholder="Enter your name" aria-label="Your name">
+    <button class="mbtn main" id="begin" disabled>Begin</button>
+    <button class="mbtn" id="back1">Back</button>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <div id="bg"></div>
+  <div id="stage"></div>
+  <button class="sbtn" id="menuBtn">Menu</button>
+  <div id="ui">
+    <div class="box" id="box"><p class="who" id="who"></p><p id="text"></p><p class="hint" id="hint">Tap to continue</p></div>
+    <div id="choices"></div>
+  </div>
+</section>
+
+<section id="files" class="screen">
+  <header class="bar mono"><span>Triton-SS7 // Personnel records</span></header>
+  <h2 id="filesTitle">Load game</h2>
+  <div id="slots"></div>
+  <button class="mbtn" id="filesBack">Back</button>
+</section>
+
+<section id="crewScr" class="screen">
+  <header class="bar mono"><span>Triton-SS7 // Crew files</span></header>
+  <div id="roster"></div>
+  <div id="card" class="card"></div>
+  <button class="mbtn" id="crewBack">Back</button>
+</section>
+
+<script src="chapter1.js"></script>
+<script src="engine.js"></script>
+</body>
+</html>
